@@ -1,8 +1,3 @@
-    #As a publisher
-    #In order to add relevant content to my news service
-    #I would like to be able to create articles
-    #Here is a starting feature file for the create functionality.
-
 Feature: Create articles
   As a publisher
   In order to add relevant content to my news service

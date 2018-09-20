@@ -12,16 +12,16 @@ Given("the following articles exists") do |table|
   end
 end  
 
-Given("I visit the {string} page") do |string|
-    pending # Write code here that turns the phrase above into concrete actions
+Given("I visit the {string} page") do |landing|
+   visit root_path
   end
   
-When("I click {string} link") do |string|
-    pending # Write code here that turns the phrase above into concrete actions
+When("I click {string} link") do |link|
+    click_on link
 end
   
-When("I fill in {string} with {string}") do |string, string2|
-    pending # Write code here that turns the phrase above into concrete actions
+When("I fill in {string} with {string}") do |field, data|
+    fill_in field, with: data
 end
   
 When("I click {string} button") do |string|
