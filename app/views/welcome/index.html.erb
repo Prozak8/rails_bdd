@@ -1,9 +1,14 @@
 <%= link_to 'My Blog', controller: 'articles' %>
 <%= link_to 'New Article', new_article_path %>
 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th></th>
+  </tr>
+
 <% @articles.each do |article| %>
     <p><%= article.title %></p>
     <p><%= article.content %></p>
-
-    
 <% end %>
