@@ -7,8 +7,8 @@ Then("I should see {string}") do |content|
 end
 
 Given("the following articles exists") do |table|
-     table.hashes.each do |article|
-    Article.create!(article)
+    table.hashes.each do |article|
+    Article.create!(article)  #Use factory
   end
 end  
 
@@ -16,7 +16,7 @@ Given("I visit the {string} page") do |landing|
     visit root_path
 end
    
-When("I click {string} link") do |link|
+When("I click {string}( link)") do |link|
     click_on link
 end
   
@@ -29,21 +29,10 @@ Then("I should be on {string} page") do |article_title|
     expect(current_path).to eq article_path(article)
 end
 
-#Given("the following article exists") do |table|
-# table is a Cucumber::MultilineArgument::DataTable
-#pending # Write code here that turns the phrase above into concrete actions
-#end
-
-Then("I should be on {string}") do |string|
-pending # Write code here that turns the phrase above into concrete actions
+When("I click {string} link for {string}") do |element_text, article_title|
+    article = Article.find_by(title: article_title)
+    within "#article_#{article.id}" do 
+        click_on element_text 
+    end
 end
-
-Then("I change {string} to {string}") do |string, string2|
-pending # Write code here that turns the phrase above into concrete actions
-end
-
-Then("I should see {string} page") do |string|
-pending # Write code here that turns the phrase above into concrete actions
-end
-  
-  
+    
