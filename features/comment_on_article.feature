@@ -12,8 +12,8 @@ Feature: Comment on Articles
         And I click "Show" link for "A breaking news item"
 
     Scenario: Commenting on Articles
-        When I fill in "comment" with "I enjoyed this read!"
-        And I fill in "Email" with "jake@hotmail.com"
+        When I fill in "Body" with "I enjoyed this read!"
+        And I fill in "Commenter" with "jake@hotmail.com"
         And I click "Create"
         Then I should see "I enjoyed this read!"
         And I should see "jake@hotmail.com"
