@@ -28,3 +28,22 @@ Then("I should be on {string} page") do |article_title|
     article = Article.find_by(title: article_title)
     expect(current_path).to eq article_path(article)
 end
+
+#Given("the following article exists") do |table|
+# table is a Cucumber::MultilineArgument::DataTable
+#pending # Write code here that turns the phrase above into concrete actions
+#end
+
+Then("I should be on {string}") do |string|
+pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then("I change {string} to {string}") do |string, string2|
+pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then("I should see {string} page") do |string|
+pending # Write code here that turns the phrase above into concrete actions
+end
+  
+  
