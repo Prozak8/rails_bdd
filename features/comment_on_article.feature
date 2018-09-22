@@ -17,3 +17,8 @@ Feature: Comment on Articles
         And I click "Create"
         Then I should see "I enjoyed this read!"
         And I should see "jake@hotmail.com"
+
+    Scenario: Commenting on Articles failed
+        When I click "Create"
+        Then I should see "Commenter can't be blank"
+        
