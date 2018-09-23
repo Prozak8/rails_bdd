@@ -11,6 +11,10 @@ Feature: Comment on Articles
         And I visit the site
         And I click "Show" link for "A breaking news item"
 
+        Given the following comment exist for "A breaking news item"
+            | body                 | commenter        |
+            | I enjoyed this read! | jake@hotmail.com |
+
     Scenario: Commenting on Articles[happy path]
         When I fill in "Body" with "I enjoyed this read!"
         And I fill in "Commenter" with "jake@hotmail.com"
@@ -18,10 +22,11 @@ Feature: Comment on Articles
         Then I should see "I enjoyed this read!"
         And I should see "jake@hotmail.com"
 
-    Scenario: Visitor doesn't enter a comment in the comment box [Sad Path]
+    Scenario: Visitor doesn't enter a Email[Sad Path]
         When I fill in "Body" with "I enjoyed this read!"
+        And I fill in "Commenter" with "Nothing"
         And I click "Create"
-        Then I should see "Email can't be blank"
+        Then I should see "Commenter can't be blank"
 
     #Scenario: Commenting on Articles failed[sad path]
         #When I click "Create"
