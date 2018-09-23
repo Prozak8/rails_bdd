@@ -11,14 +11,19 @@ Feature: Comment on Articles
         And I visit the site
         And I click "Show" link for "A breaking news item"
 
-    Scenario: Commenting on Articles
+    Scenario: Commenting on Articles[happy path]
         When I fill in "Body" with "I enjoyed this read!"
         And I fill in "Commenter" with "jake@hotmail.com"
         And I click "Create"
         Then I should see "I enjoyed this read!"
         And I should see "jake@hotmail.com"
 
-    Scenario: Commenting on Articles failed
-        When I click "Create"
-        Then I should see "Commenter can't be blank"
+    Scenario: Visitor doesn't enter a comment in the comment box [Sad Path]
+        When I fill in "Body" with "I enjoyed this read!"
+        And I click "Create"
+        Then I should see "Email can't be blank"
+
+    #Scenario: Commenting on Articles failed[sad path]
+        #When I click "Create"
+        #Then I should see "Body can't be blank"
         

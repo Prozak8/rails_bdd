@@ -16,6 +16,3 @@ Feature: Edit Articles
         And I click "Update Article" 
         Then I should be on "Breaking News" page
         And I should see "Article was successfully updated."
-
-
-#change links to something more relevant
